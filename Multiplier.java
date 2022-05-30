@@ -6,12 +6,13 @@ import javax.swing.*;
 public class Multiplier implements ActionListener
 {
     final int min = 1;
-    final int max = 200;
+    final int max = 400;
     int x = 0;
     int initCredit = 10000;
     int betAmount = 0;
     JFrame frame = new JFrame();
-    JLabel betAmt = new JLabel("Bet Amount:");
+    //JLabel betAmt = new JLabel("Bet Amount:");
+    JLabel betAmt = new JLabel( "<html><span bgcolor=\"orange\">Bet Amount:</span></html>" );
     JTextField bet = new JTextField();
     JButton startButton = new JButton("Start");
     JButton playButton = new JButton("Play Again");
@@ -19,6 +20,7 @@ public class Multiplier implements ActionListener
     JLabel outcome = new JLabel();
     JTextField wallet = new JTextField("Credits: " + initCredit);
     JTextField output = new JTextField(); 
+    ImageIcon img = new ImageIcon("C:/Users/Yifan Tong/Downloads/seS95AMn_400x400.jpg");
     int elapsedTime = 0;
     int deciMultiplier = 0;
     int intMultiplier = 1;
@@ -100,6 +102,10 @@ public class Multiplier implements ActionListener
         frame.add(bet);
         frame.add(wallet);
         frame.add(output);
+        frame.setIconImage(img.getImage());
+        frame.setTitle("Stonks Game");
+        Color blue = new Color(62, 110, 214);
+        frame.getContentPane().setBackground(blue);
         
         bet.addActionListener(new ActionListener()
         {
